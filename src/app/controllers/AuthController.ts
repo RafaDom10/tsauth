@@ -21,7 +21,7 @@ class AuthController {
       return res.sendStatus(401);
     }
 
-    const token = jwt.sign({ id: user.id }, 'secretWord', { expiresIn: '1d' });
+    const token = jwt.sign({ id: user.id }, 'secret', { expiresIn: '1d' });
 
     // @ts-expect-error
     delete user.password;
